@@ -1,0 +1,216 @@
+<!doctype html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Learning English</title>
+  <style type="text/css">
+
+@font-face {
+    font-family: 'ciclefina';
+    src: url('images/cicle-webfont.woff2') format('woff2'),
+	     url('images/cicle-webfont.woff') format('woff'),
+         url('images/ciclefina-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: 'zantroke';
+    src: url('images/zantroke-webfont.woff2') format('woff2'),
+	     url('images/zantroke-webfont.woff') format('woff'),
+         url('images/zantroke-webfont.svg') format('svg');
+    font-weight: normal;
+    font-style: normal;
+} 
+
+    body{
+	margin:0 auto;
+ /*	font-size:页面打开时，由用户端的window.innerWidth属性决定*/
+		}
+	header{
+	font-family: 'zantroke';
+	height:150px;
+	background:url("images/header7.jpg")  ;
+	color:gold;
+    text-align:center;
+	text-shadow:green 3px 2px ;
+	}
+	header>h1{
+	 margin:0 auto;
+	 padding:2px;
+	 font-size:1.5em;
+	 letter-spacing:0.2em;
+	 margin:0.2em;
+	}
+	header>h1>span{
+	font-size:0.5em;
+	}
+
+	nav{
+	height:50px;
+	margin:30px;
+	}
+    nav span{
+	 font-size: 1.4em;
+	 border:3px outset   ;
+	 background-color:rgb(168,130,20);
+	 border-radius: 20% ;
+	 padding: 0.1em ;
+	 color:rgb(255,255,255) ;
+	 cursor: pointer;
+	 }
+     nav span:hover{
+	  background-color:rgb(0,200,0);
+	 }
+	  .onclickStyle{
+	   border:3px  inset  ;
+	   background-color:rgb(300,130,20);
+	   color:gold ;
+	 }
+
+	section{
+	 display: flex ;
+	}
+	article{
+	 font-family: 'ciclefina' ;
+	 border:1px solid rgb(50,150,50);
+	 padding:5px;
+	 text-align:justify;
+	 line-height:1.5;
+     color:rgb(168,122,20) ;
+	 background-color:rgb(200,200,220);
+
+
+	}
+	article#help{
+	 flex: 1 ;
+	}
+	article#word{
+	 flex: 2;
+	 text-align:center;
+	}
+    article#word input#en{font-family: 'zantroke'}
+
+	footer{
+	font-family: 'zantroke','Arial Black';
+	background-color:rgb(170,120,18);
+	color:gold;
+	font-size:1.2em;
+	text-align:center;
+	height:50px;
+	padding-top:15px;
+	}
+
+    article#word{
+	 text-align:center;
+	 cursor:pointer;
+	}
+	
+	article#word>input{
+	 width:90%; 
+	 font-family:'zant';
+	 color:gold;
+     font-size:2em;
+	 text-align:center;
+	}
+	article#word p#pn{
+	 font-family:'Arial','ciclefina';
+	 color:red;
+	 font-size:2em;
+	 margin:0.1em;
+	}
+	article#word p#cn{
+	 font-family:'ciclefina', '宋体';
+	 font-size:1.3em;
+	 color:green;
+	 margin:0.1em;
+	}
+	article#word nav{
+	 font-family:'幼圆', '黑体';
+	 font-size:1.1em;
+	 color:rgb(163,118,22);
+	 margin:auto;
+	}
+	article#word nav span{
+	margin-right:1em;
+	}
+	article#word nav span:hover{
+	 background-color:rgb(0,0,220);
+	}
+
+	article#word p#cn p{
+	 font-size:1em;
+	 margin:0.1em auto;
+	 border:1px solid black ;
+	}
+	article#word p#cn p:hover{
+	  background-color:rgb(180,118,22);
+     }
+    article#help{
+	  position:relative;
+	  background-color:rgb(163,118,22);
+	  overflow:hidden;
+	   	} 
+	article#help div#backPic{
+	 position:absolute;
+	 width:98%;
+	 height:98%;
+	 left:1%;top:1%;
+	 z-index: 1 ;
+	}
+	article#help div#backPic img{
+	 width:100%;
+	 /*height:100%;如果设置这条，会照成窄屏幕出现图像变形*/
+	}
+	 article#help p#textInfo{
+	  position:absolute;
+	  color:white;
+	  font-size:1.3em;
+	  text-indent:2em;
+	  left:0.2em;
+	  top:35%;
+	  text-shadow:gold 2px 1px ;
+	  z-index: 2 ;
+	  padding:1%;
+	 	  }
+  </style>
+  <script src="images/words.js">
+  </script>
+  <script src="images/20192977.js">
+  </script>
+ </head>
+ <body>
+  <header> 
+   <h1>Words Remembering App <span>（大学英语6级）</span></h1>
+   <nav>
+    <span   id="read">读一读</span>
+    <span   id="write">写一写</span>
+    <span   id="select">选一选</span>
+    <span   id="search">搜一搜</span>
+    <span   id="listen">听一听</span>
+   </nav>
+  </header>
+  <section>
+    <article id = "help">
+	  <p id="textInfo">
+	 请选择上面状态按钮，进入相应学习单词的模式。
+	 </p>
+	 <div id="backPic" >
+	 </div>
+	</article>
+	<article id = "word">
+	  <h1>当前单词</h1>
+	  <input id="en" type="text" value="ability">
+	  <p id="pn">/ ə'biliti /</p>
+	  <p id="cn">n.能力；本领；才能，才干；专门技能，天资</p>
+	<nav>
+    <span   id="ok">确认</span>
+    <span   id="next">下一个</span>
+   </nav>
+    </article>
+  </section>
+  <footer>
+    Code By 陈思霖 of 19java一班  on
+  </footer>
+ </body>
+</html>
